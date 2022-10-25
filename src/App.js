@@ -1,10 +1,14 @@
 import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './Layout/Route/Routes'
 
 function App() {
   return (
-    <div className="App">
-      <button className="btn glass">Glass button</button>
-      <button className="btn loading">loading</button>
+    <div>
+      <RouterProvider router={router}>
+
+      </RouterProvider>
+
     </div>
   );
 }
