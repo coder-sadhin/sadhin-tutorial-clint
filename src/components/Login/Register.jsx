@@ -13,15 +13,21 @@ const Register = () => {
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
+                                    <span className="label-text">Name</span>
+                                </label>
+                                <input type="text" placeholder="Enter Your Name" className="input input-bordered" />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="email" placeholder="Enter your email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input input-bordered" />
+                                <input type="password" placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <span className="label-text-alt">Already Have An Account? <Link className='link link-hover' to='/login'>Login</Link></span>
                                 </label>

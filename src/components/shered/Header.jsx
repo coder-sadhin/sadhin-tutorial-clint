@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserTie } from 'react-icons/fa'
 
 const Header = ({ user }) => {
     return (
@@ -71,8 +72,24 @@ const Header = ({ user }) => {
                             </div>
                             :
                             <div>
-                                <Link to='/login' className="btn btn-success mr-3">Login</Link>
-                                <Link to='/register' className="btn btn-success mr-3">Register</Link>
+                                <div className="dropdown dropdown-end">
+
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <FaUserTie className='w-full text-3xl' />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li>
+                                            <Link to='/login' className="mr-3">Login</Link>
+                                        </li>
+                                        <li>
+                                            <Link to='/register' className=" mr-3">Register</Link>
+                                        </li>
+                                    </ul>
+                                </div>
+
+
                             </div>
                     }
                 </div>
