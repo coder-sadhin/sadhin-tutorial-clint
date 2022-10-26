@@ -30,6 +30,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/courses',
+                loader: () => fetch('https://project-learning-courses-coder-sadhin.vercel.app/courses'),
                 element: <Courses></Courses>
             },
             {
@@ -42,7 +43,8 @@ export const router = createBrowserRouter([
                 element: <OverView></OverView>
             },
             {
-                path: '/courses/details',
+                path: '/courses/:id',
+                loader: ({ params }) => fetch(`https://project-learning-courses-coder-sadhin.vercel.app/courses/${params.id}`),
                 element: <PrivetRoute><CourseDetails></CourseDetails></PrivetRoute>
             }
         ]
