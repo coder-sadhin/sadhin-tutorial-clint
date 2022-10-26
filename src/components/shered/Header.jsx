@@ -24,9 +24,6 @@ const Header = ({ user }) => {
                             <li>
                                 <Link to="/blogs">Blogs</Link>
                             </li>
-                            <li>
-                                <Link to="/about">AboutUs</Link>
-                            </li>
                         </ul>
                     </div>
                     <Link to="/" className='btn btn-ghost normal-case text-xl'>SADHIN TUTORIALS</Link>
@@ -44,9 +41,6 @@ const Header = ({ user }) => {
                         </li>
                         <li>
                             <Link to="/blogs">Blogs</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">AboutUs</Link>
                         </li>
                     </ul>
                 </div>
