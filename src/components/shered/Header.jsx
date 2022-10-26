@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserTie } from 'react-icons/fa'
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
-const Header = ({ user }) => {
+const Header = () => {
+    const { user, userSignOut } = useContext(AuthContext);
+    console.log(user)
+
     return (
         <div className=' bg-blue-400'>
             <div className="navbar w-11/12 mx-auto">
@@ -48,21 +53,22 @@ const Header = ({ user }) => {
                 <div className="navbar-end">
                     {
                         user ?
-                            <div className="dropdown dropdown-end">
-
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img src="https://placeimg.com/80/80/people" />
-                                    </div>
-                                </label>
-                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li>
-                                        <Link className='justify-between' to="/">Profile
-                                            <span className="badge">New</span></Link>
-                                    </li>
-                                    <li><a>Settings</a></li>
-                                    <li><a>Logout</a></li>
-                                </ul>
+                            <div className='flex items-center'>
+                                <h2 className='text-2xl mr-3'>Welcome  <span className='text-blue-700 font-bold'>{user.displayName}</span></h2>
+                                <div className="dropdown dropdown-end">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src="https://placeimg.com/80/80/people" />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                        <li>
+                                            <Link className='justify-between' to="/">Profile
+                                                <span className="badge">New</span></Link>
+                                        </li>
+                                        <li><span onClick={userSignOut}>Logout</span></li>
+                                    </ul>
+                                </div>
                             </div>
                             :
                             <div>
@@ -88,7 +94,7 @@ const Header = ({ user }) => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
