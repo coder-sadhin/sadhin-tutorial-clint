@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { useContext } from 'react';
@@ -9,7 +9,12 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 const Login = () => {
     const { userLogin, googleLogin, githubLogin } = useContext(AuthContext);
 
+    const navigate = useNavigate();
 
+    const location = useLocation();
+
+    const from = location.state?.form?.pathname || '/'
+    // console.log(form)
 
     const handleToLogin = (event) => {
         event.preventDefault();
@@ -21,8 +26,15 @@ const Login = () => {
 
         userLogin(email, password)
             .then(result => {
+                console.log(result)
                 const user = result.user;
-                console.log(user)
+                if (user) {
+
+                    navigate(from, { replace: true })
+                }
+
+
+                // console.log(user)
             })
             .catch(error => {
                 console.error(error);
@@ -34,6 +46,9 @@ const Login = () => {
         googleLogin(provider)
             .then(result => {
                 const user = result.user;
+                if (user) {
+                    navigate(from, { replace: true })
+                }
                 console.log(user)
             })
             .catch(error => {
@@ -46,10 +61,13 @@ const Login = () => {
         githubLogin(provider)
             .then(result => {
                 const user = result.user;
+                if (user) {
+                    navigate(from, { replace: true })
+                }
                 console.log(user)
             })
             .catch(error => {
-                console.error(error);
+                console.error('akhane error hoiche', error);
             })
     }
 

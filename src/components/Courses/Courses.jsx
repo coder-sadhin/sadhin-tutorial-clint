@@ -4,6 +4,9 @@ const Courses = () => {
     return (
         <div>
             this is inside courses
+
+
+
         </div>
     );
 };
