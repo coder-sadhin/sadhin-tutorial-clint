@@ -26,7 +26,7 @@ const Header = ({ user }) => {
                             </li>
                         </ul>
                     </div>
-                    <Link to="/" className='btn btn-ghost normal-case text-xl'>SADHIN TUTORIALS</Link>
+                    <Link to="/" className='btn btn-ghost normal-case font-bold text-xl'>SADHIN TUTORIALS</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
