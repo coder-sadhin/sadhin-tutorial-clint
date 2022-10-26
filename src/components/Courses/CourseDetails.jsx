@@ -4,7 +4,7 @@ import { useLoaderData, Link } from 'react-router-dom';
 const CourseDetails = () => {
     const useData = useLoaderData();
 
-    const { total_enrolment, tutor, rating, image_url, details, course_title, course_fee, course_duration } = useData;
+    const { id, total_enrolment, tutor, rating, image_url, details, course_title, course_fee, course_duration } = useData;
 
 
     return (
@@ -48,7 +48,7 @@ const CourseDetails = () => {
                     </div>
                     <div className="btn-group w-full mt-5">
                         <Link className="btn btn-primary w-6/12" to={'/courses'}><button>Go To Course Page</button></Link>
-                        <Link className="btn btn-secondary w-6/12"><button>Go Check Out</button></Link>
+                        <Link className="btn btn-secondary w-6/12" to={`/courses/${id}/checkout`}><button>Go Check Out</button></Link>
                     </div>
                 </div>
             </div>

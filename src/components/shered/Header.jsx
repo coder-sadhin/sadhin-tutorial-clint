@@ -63,7 +63,7 @@ const Header = () => {
                                     </label>
                                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                         <li>
-                                            <Link className='justify-between' to="/">Profile
+                                            <Link className='justify-between' to="/user/profile">Profile
                                                 <span className="badge">New</span></Link>
                                         </li>
                                         <li><span onClick={userSignOut}>Logout</span></li>
