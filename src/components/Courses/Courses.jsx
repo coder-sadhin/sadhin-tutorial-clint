@@ -8,7 +8,7 @@ const Courses = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-4'>
+            <div className='grid md:grid-cols-4 lg:grid-cols-4 grid-flow-row'>
                 <div className='col-span-1 bg-base-200 h-full'>
                     <h2 className='font-bold text-center text-3xl my-5'>Name of Courses</h2>
                     <div className=' m-5 '>
@@ -17,9 +17,9 @@ const Courses = () => {
                         }
                     </div>
                 </div>
-                <div className='col-span-3'>
+                <div className='md:col-span-3 lg:col-span-3'>
                     <h2 className='font-bold text-center text-5xl mb-5'>All Our Courses</h2>
-                    <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 w-full md:w-11/12 lg:w-11/12 mx-auto'>
+                    <div className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 w-11/12 mx-auto'>
                         {
                             courses.map(course => <Course key={course.id} course={course}></Course>)
                         }

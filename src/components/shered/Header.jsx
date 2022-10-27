@@ -56,11 +56,19 @@ const Header = () => {
                             <div className='flex items-center'>
                                 <h2 className='text-2xl mr-3'>Welcome  <span className='text-blue-700 font-bold'>{user.displayName}</span></h2>
                                 <div className="dropdown dropdown-end">
-                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                        <div className="w-10 rounded-full">
-                                            <img src="https://placeimg.com/80/80/people" />
-                                        </div>
-                                    </label>
+                                    <div className="tooltip tooltip-left" data-tip={
+                                        user.displayName ? user.displayName : "Hello Mister X"
+                                    }>
+
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 rounded-full">
+                                                {
+                                                    user.photoURL ? user.photoURL :
+                                                        <img src="https://placeimg.com/80/80/people" />
+                                                }
+                                            </div>
+                                        </label>
+                                    </div>
                                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                                         <li>
                                             <Link className='justify-between' to="/user/profile">Profile

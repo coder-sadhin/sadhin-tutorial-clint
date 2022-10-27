@@ -34,10 +34,6 @@ const CourseDetails = () => {
                         <div className="stat place-items-center">
                             <div className="stat-title">Course Instructor</div>
                             <div className="stat-value">{tutor.name}</div>
-                            <div className="stat-desc">
-
-
-                            </div>
                         </div>
 
                         <div className="stat place-items-center">

@@ -2,18 +2,27 @@ import React from 'react';
 import { useContext } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import Pdf from 'react-to-pdf';
+import toast, { Toaster } from 'react-hot-toast';
 
 const CheckOut = () => {
     const { user } = useContext(AuthContext);
     const selectCourse = useLoaderData();
     const { tutor, course_title, course_fee, course_duration } = selectCourse;
 
+    const ref = React.createRef();
+
+
+    const successToast = () => {
+        toast.success('Course Enroll Successfully!');
+    }
+
     return (
-        <div className='w-8/12 md:w-8/12 lg:w-6/12 mx-auto my-10'>
+        <div className='w-11/12 md:w-8/12 lg:w-6/12 mx-auto my-10'>
             <div className="card card-compact lg:px-10 w-full bg-base-300 shadow-xl">
-                <h2 className='font-bold text-center text-3xl my-5'>CheckOut Details</h2>
                 <div className="card-body">
-                    <table className="table-auto">
+                    <table ref={ref} className="table-fixed">
+                        <h2 className='font-bold text-3xl my-5'>CheckOut Details</h2>
                         <tbody>
                             <tr>
                                 <td><h2 className="card-title">Student Name: </h2></td>
@@ -76,8 +85,13 @@ const CheckOut = () => {
 
                     <div className="btn-group w-full mt-10">
                         <Link className="btn btn-primary w-6/12" to={'/courses'}><button>Go To Course Page</button></Link>
-                        <button className="btn btn-secondary w-6/12">get premium access</button>
+
+                        <Pdf targetRef={ref} filename="code-example.pdf">
+                            {({ toPdf }) => <button onClick={() => { successToast(); toPdf(); }} className="btn btn-secondary w-6/12">get premium access</button>}
+                        </Pdf>
                     </div>
+
+
                 </div>
             </div>
         </div>
