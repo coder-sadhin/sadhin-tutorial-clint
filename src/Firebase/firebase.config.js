@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBeVmaqrSTTtyaKSigVO0AJ_st5zZbUGJ4",
-    authDomain: "sadhin-tutorials.firebaseapp.com",
-    projectId: "sadhin-tutorials",
-    storageBucket: "sadhin-tutorials.appspot.com",
-    messagingSenderId: "338878848622",
-    appId: "1:338878848622:web:12417a4f1a44030c1c907f"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 
