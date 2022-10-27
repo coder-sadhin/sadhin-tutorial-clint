@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../Firebase/firebase.config';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 
 
 export const AuthContext = createContext();
@@ -34,6 +34,10 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, provider);
     }
 
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
+    }
+
     const githubLogin = (provider) => {
         setLoading(true)
         return signInWithPopup(auth, provider);
@@ -63,7 +67,8 @@ const AuthProvider = ({ children }) => {
         githubLogin,
         userSignOut,
         loading,
-        verifyEmail
+        verifyEmail,
+        resetPassword
     };
     return (
         <div>

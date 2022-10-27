@@ -119,7 +119,7 @@ const Header = () => {
                                             <div className="w-10 rounded-full">
                                                 {
                                                     user.photoURL ?
-                                                        user.photoURL
+                                                        <img src={user.photoURL} alt="" />
                                                         :
                                                         <div className="w-10 rounded-full">
                                                             <FaUserTie className='w-full text-3xl' />

@@ -41,6 +41,7 @@ const Login = () => {
             })
             .catch(error => {
                 console.error(error);
+                setError(error.message)
             })
     }
 
@@ -75,7 +76,7 @@ const Login = () => {
                 }
             })
             .catch(error => {
-                console.error('akhane error hoiche', error);
+                console.error('error hoiche', error);
             })
     }
 
@@ -101,7 +102,7 @@ const Login = () => {
                                     </label>
                                     <input name='password' required type="password" placeholder="password" className="input input-bordered" />
                                     <label className="label">
-                                        <span className="label-text-alt link link-hover">Forgot password?</span>
+                                        <span className="label-text-alt link link-hover"><Link to='/login/reset'>Forgot password?</Link></span>
                                         <span className="label-text-alt">New On Website? <Link className='link link-hover' to='/register'>Register</Link></span>
                                     </label>
                                 </div>

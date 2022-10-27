@@ -3,7 +3,7 @@ import Blogs from '../../components/Blogs/Blogs';
 import CheckOut from '../../components/Courses/CheckOut';
 import CourseDetails from '../../components/Courses/CourseDetails';
 import Courses from '../../components/Courses/Courses';
-import UserDetails from '../../components/Courses/UserDetails/UserDtails';
+import UserDetails from '../../components/UserDetails/UserDtails';
 import ErrorPage from '../../components/ErrorPage/ErrorPage';
 import FAQ from '../../components/FAQ/FAQ';
 import Home from '../../components/Home/Home';
@@ -12,6 +12,7 @@ import Register from '../../components/Login/Register';
 import OverView from '../../components/OverView/OverView';
 import PrivetRoute from '../../components/PrivetRoute/PrivetRoute';
 import Main from '../Main';
+import ResetPassword from '../../components/Login/ResetPassword';
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ export const router = createBrowserRouter([
                 path: '/faq',
                 loader: () => fetch('https://project-learning-courses-coder-sadhin.vercel.app/blogs'),
                 element: <FAQ></FAQ>
+            },
+            {
+                path: '/login/reset',
+                element: <ResetPassword></ResetPassword>
             }
         ]
     }
