@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser, updateCurrentUserProfile } = useContext(AuthContext);
+    const { createUser, verifyEmail, updateCurrentUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
 
 
@@ -26,12 +27,20 @@ const Register = () => {
                 console.log(user)
                 setError('');
                 updateCurrentUserProfile(profile);
-                // toast.success('Please! Verify your email address');
+                handleToVerifications();
+                toast.success('User successfully created');
+                toast.success('Please! Verify your email address');
             })
             .catch(error => {
                 console.error(error);
                 setError(error.message)
             })
+    }
+
+    const handleToVerifications = () => {
+        verifyEmail()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -61,6 +70,7 @@ const Register = () => {
                                         <span className="label-text">Email</span>
                                     </label>
                                     <input name='email' required type="email" placeholder="Enter your email" className="input input-bordered" />
+
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -71,6 +81,7 @@ const Register = () => {
                                         <span className="label-text-alt">Already Have An Account? <Link className='link link-hover' to='/login'>Login</Link></span>
                                     </label>
                                 </div>
+                                <span className='text-red-700'>{error}</span>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-primary">Register</button>
                                 </div>

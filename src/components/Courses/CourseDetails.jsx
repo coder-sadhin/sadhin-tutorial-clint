@@ -8,7 +8,7 @@ const CourseDetails = () => {
 
 
     return (
-        <div className='w-11/12 md:w-8/12 lg:w-8/12 mx-auto my-10'>
+        <div className='w-11/12 md:w-8/12 lg:w-8/12 mx-auto py-10'>
             <div className="card bg-base-300 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title mb-5 text-3xl ">
@@ -44,7 +44,7 @@ const CourseDetails = () => {
                     </div>
                     <div className="btn-group w-full mt-5">
                         <Link className="btn btn-primary w-6/12" to={'/courses'}><button>Go To Course Page</button></Link>
-                        <Link className="btn btn-secondary w-6/12" to={`/courses/${id}/checkout`}><button>Go Check Out</button></Link>
+                        <Link className="btn btn-secondary w-6/12" to={`/courses/${id}/checkout`}><button>Get Premium Access</button></Link>
                     </div>
                 </div>
             </div>

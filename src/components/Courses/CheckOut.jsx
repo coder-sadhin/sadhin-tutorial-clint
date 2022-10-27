@@ -18,7 +18,7 @@ const CheckOut = () => {
     }
 
     return (
-        <div className='w-11/12 md:w-8/12 lg:w-6/12 mx-auto my-10'>
+        <div className='w-11/12 md:w-8/12 lg:w-6/12 mx-auto py-10'>
             <div className="card card-compact lg:px-10 w-full bg-base-300 shadow-xl">
                 <div className="card-body">
                     <table ref={ref} className="table-fixed">
@@ -83,11 +83,11 @@ const CheckOut = () => {
                     </table>
 
 
-                    <div className="btn-group w-full mt-10">
+                    <div className="btn-group w-full pt-10">
                         <Link className="btn btn-primary w-6/12" to={'/courses'}><button>Go To Course Page</button></Link>
 
                         <Pdf targetRef={ref} filename="code-example.pdf">
-                            {({ toPdf }) => <button onClick={() => { successToast(); toPdf(); }} className="btn btn-secondary w-6/12">get premium access</button>}
+                            {({ toPdf }) => <button onClick={() => { successToast(); toPdf(); }} className="btn btn-secondary w-6/12">Confirm CheckOut </button>}
                         </Pdf>
                     </div>
 

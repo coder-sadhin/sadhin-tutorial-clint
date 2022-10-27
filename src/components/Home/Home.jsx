@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div>
-            <div className="hero min-h-screen" style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}>
+            <div className="hero min-h-screen" style={{ backgroundImage: `url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMJJkXXov3Ysx1tLxWc7LS9adunB439dBrXw&usqp=CAU")` }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">

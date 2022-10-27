@@ -4,7 +4,6 @@ import CheckOut from '../../components/Courses/CheckOut';
 import CourseDetails from '../../components/Courses/CourseDetails';
 import Courses from '../../components/Courses/Courses';
 import UserDetails from '../../components/Courses/UserDetails/UserDtails';
-import UserDtails from '../../components/Courses/UserDetails/UserDtails';
 import ErrorPage from '../../components/ErrorPage/ErrorPage';
 import FAQ from '../../components/FAQ/FAQ';
 import Home from '../../components/Home/Home';
@@ -49,7 +48,7 @@ export const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 loader: ({ params }) => fetch(`https://project-learning-courses-coder-sadhin.vercel.app/courses/${params.id}`),
-                element: <PrivetRoute><CourseDetails></CourseDetails></PrivetRoute>
+                element: <CourseDetails></CourseDetails>
             },
             {
                 path: '/courses/:id/checkout',
@@ -62,6 +61,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/faq',
+                loader: () => fetch('https://project-learning-courses-coder-sadhin.vercel.app/blogs'),
                 element: <FAQ></FAQ>
             }
         ]

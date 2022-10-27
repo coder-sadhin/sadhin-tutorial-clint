@@ -30,7 +30,7 @@ const Overview = () => {
 
     return (
         <div>
-            <h2 className='font-bold text-center text-5xl my-5'>Our OverAll Details</h2>
+            <h2 className='font-bold text-center dark:text-white text-5xl py-5'>Our OverAll Details</h2>
             <div className='flex justify-center my-8'>
                 <ResponsiveContainer width="90%" height={500}>
                     <BarChart

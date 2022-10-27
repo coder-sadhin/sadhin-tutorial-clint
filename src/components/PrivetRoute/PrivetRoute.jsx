@@ -9,10 +9,10 @@ const PrivetRoute = ({ children }) => {
 
     if (loading) {
         return (
-            <div className='flex justify-center my-10'>
-                <div className='w-4/6'>
+            <div className='flex justify-center  py-10'>
+                <div className='w-4/6 dark:text-white'>
                     <h2 className='font-bold text-3xl text-center'>Loading.......</h2>
-                    <progress className="progress w-full"></progress>
+                    <progress className="dark:bg-white progress w-full"></progress>
                 </div>
             </div>
         )
