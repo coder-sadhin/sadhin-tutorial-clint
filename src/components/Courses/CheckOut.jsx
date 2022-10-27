@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import Pdf from 'react-to-pdf';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 
 const CheckOut = () => {
     const { user } = useContext(AuthContext);

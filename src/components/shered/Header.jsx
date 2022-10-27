@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { FaUserTie } from 'react-icons/fa'
 import { useContext } from 'react';
@@ -7,6 +8,33 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Header = () => {
     const { user, userSignOut } = useContext(AuthContext);
     console.log(user)
+
+
+    const [theme, setTheme] = useState(null);
+
+    useEffect(() => {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setTheme('dark');
+        }
+        else {
+            setTheme('light');
+        }
+    }, [])
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
+
+
+    const handleThemeSwitch = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
+
+
 
     return (
         <div className=' bg-blue-400'>
@@ -24,10 +52,21 @@ const Header = () => {
                                 <Link to="/courses">Courses</Link>
                             </li>
                             <li>
+                                <Link to="/faq">FAQ</Link>
+                            </li>
+                            <li>
                                 <Link to="/overview">Overview</Link>
                             </li>
                             <li>
                                 <Link to="/blogs">Blogs</Link>
+                            </li>
+                            <li>
+                                <div className="form-control">
+                                    <label className="label cursor-pointer">
+                                        <span className=" mr-2">Change Theme</span>
+                                        <span onClick={handleThemeSwitch}><input type="checkbox" className="toggle toggle-accent" /></span>
+                                    </label>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -42,10 +81,21 @@ const Header = () => {
                             <Link to="/courses">Courses</Link>
                         </li>
                         <li>
+                            <Link to="/faq">FAQ</Link>
+                        </li>
+                        <li>
                             <Link to="/overview">Overview</Link>
                         </li>
                         <li>
                             <Link to="/blogs">Blogs</Link>
+                        </li>
+                        <li>
+                            <div className="form-control">
+                                <label className="label cursor-pointer">
+                                    <span className=" mr-2">Change Theme</span>
+                                    <span onClick={handleThemeSwitch}><input type="checkbox" className="toggle toggle-accent" /></span>
+                                </label>
+                            </div>
                         </li>
                     </ul>
                 </div>

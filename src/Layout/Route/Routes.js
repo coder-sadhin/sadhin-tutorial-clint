@@ -6,6 +6,7 @@ import Courses from '../../components/Courses/Courses';
 import UserDetails from '../../components/Courses/UserDetails/UserDtails';
 import UserDtails from '../../components/Courses/UserDetails/UserDtails';
 import ErrorPage from '../../components/ErrorPage/ErrorPage';
+import FAQ from '../../components/FAQ/FAQ';
 import Home from '../../components/Home/Home';
 import Login from '../../components/Login/Login';
 import Register from '../../components/Login/Register';
@@ -58,6 +59,10 @@ export const router = createBrowserRouter([
             {
                 path: '/user/profile',
                 element: <PrivetRoute><UserDetails></UserDetails></PrivetRoute>
+            },
+            {
+                path: '/faq',
+                element: <FAQ></FAQ>
             }
         ]
     }
